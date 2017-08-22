@@ -1,0 +1,58 @@
+<html ng-app="myapp" ng-controller="appCtrl">
+<head>
+	<title>ProductManager</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+
+	<!-- jQuery -->
+	<script>window.$ = window.jQuery = require('jquery');</script>
+
+	<!-- Bootstrap -->
+	<script src="bootstrap/js/bootstrap.js"></script>
+
+	<!-- Angular -->
+	<script src="node_modules/angular/angular.js"></script>
+	<!-- Angular - Pagination -->
+	<script src="node_modules/angular-utils-pagination/dirPagination.js"></script>
+
+	<!-- App -->
+	<script src="app.js"></script>
+
+	<!-- Controllers -->
+	<script src="controllers/appCtrl.js"></script>
+	<script src="controllers/pessoaController.js"></script>
+	<script src="controllers/homeCtrl.js"></script>
+	<script src="controllers/customerCtrl.js"></script>
+
+	<!-- Services -->
+	<script src="services/dbService.js"></script>
+	<script src="services/windowService.js"></script>
+
+	<!-- Styling -->
+	<link href="assets/custom.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand" />
+
+</head>
+<body>
+	<div class="col-sm-2 primaryColor stretchVertically">
+		<div class="row">
+			<div class="nav">
+				<ul>
+					<li ng-class="hightlightActiveMenu('/home')"><a href="#!/home"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> home</a></li>
+					<li ng-class="hightlightActiveMenu('/customers')"><a href="#!/customers"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> customers</a></li>
+					<li ng-class="hightlightActiveMenu('/vendors')"><a href="#!/vendors"><span class="glyphicon glyphicon-oil" aria-hidden="true"></span> vendors</a></li>
+					<li ng-class="hightlightActiveMenu('/products')"><a href="#!/products"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> products</a></li>
+					<li ng-class="hightlightActiveMenu('/sales')"><a href="#!/sales"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> sales</a></li>
+					<li ng-class="hightlightActiveMenu('/settings')"><a href="#!/settings"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> settings</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-10">
+		<div class="row">
+			<div class="col-xs-12 background stretchVertically">
+				<ng-view></ng-view>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
